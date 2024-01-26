@@ -2,6 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { MaterialModule } from '../../Material/material/material.module';
 import { CountrysService } from '../../Shered/countrys.service';
 import { FormControl, FormGroup,Validators } from '@angular/forms';
+import { CitysService } from '../../Shered/citys.service';
 
 
 
@@ -26,8 +27,8 @@ export class BookingComponent implements OnInit {
      {"id":8, "cityName":"Mysuru"},
      {"id":9, "cityName":"	Hyderabad"},
      {"id":10, "cityName":"Jaipur"}
-  ];
-  constructor(private country:CountrysService){
+];
+  constructor(private country:CountrysService, private citys:CitysService){
     this.formGroup = new FormGroup({
         email: new FormControl(null,[Validators.required,Validators.email]),
         customerName: new FormControl(null,[Validators.required,Validators.maxLength(30),Validators.pattern('[A-Za-z.]*$')]),
@@ -38,7 +39,8 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCountrys()
+    this.getCountrys();
+    this.getCitys();
   }
 
   getCountrys(){
@@ -52,6 +54,15 @@ export class BookingComponent implements OnInit {
 
     })
   }
+
+getCitys(){
+  this.citys.grtCitys().subscribe((res:any)=>{
+    this.cityNames = res.cityNames;
+  },
+  (error)=>{
+     console.log(error)
+  })
+}
 
 }
 

@@ -1,0 +1,15 @@
+{
+    "cityNames":
+     [
+        {"id":1, "cityName":"Bangalore"},
+        {"id":2, "cityName":"Kochi"},
+        {"id":3, "cityName":"Mumbai"},
+        {"id":4, "cityName":"Chennai"},
+        {"id":5, "cityName":"Delhi"},
+        {"id":6, "cityName":"Kolkata"},
+        {"id":7, "cityName":"Ajmer"},
+        {"id":8, "cityName":"Mysuru"},
+        {"id":9, "cityName":"Hyderabad"},
+        {"id":10, "cityName":"Jaipur"}
+     ]
+}
