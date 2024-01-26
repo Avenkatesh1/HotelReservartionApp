@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.nav{
+    background-color: rgb(124, 124, 234);
+    box-shadow: 0px 3px 2px 2px rgb(87, 15, 15);
+    flex: 1;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex: 11;
+}
+.sidebar{
+    background-color: aliceblue;
+    flex: 2;
+}
+.main{
+    background-color: #ffffff;
+    flex: 10;
+    padding: 12px;
+}
+.flex{
+    display: flex;
+}
+.flex>*{
+    flex: 1;
+    margin: 5px;
+}
+.mr{
+    margin-right: 6px !important;
+}
+.ml{
+    margin-left: 6px !important;
+}
+.mb{
+    margin-bottom: 6px !important;
+}
+mt{
+    margin-top: 6px !important;
+}
+.w-100{
+    width: 100%;
+}
