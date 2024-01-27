@@ -1,63 +1,141 @@
-<form [formGroup]="formGroup">
-  <mat-form-field class="w-100" appearance="outline">
-    <mat-label>Add Your Mail</mat-label>
-      <input  type="text" formControlName="email" matInput placeholder="Enter Email " required="required">
-      <mat-hint [align]="'end'">up to 30 charector</mat-hint>
-      <mat-icon matPrefix>mail</mat-icon>
-</mat-form-field>
-<mat-form-field class="w-100" appearance="outline">
-    <mat-label>Add Name</mat-label>
-      <input  type="text" formControlName="customerName" matInput placeholder="Enter Customer Name" required="required">
-      <mat-hint [align]="'end'">up to 30 charector</mat-hint>
-      <mat-icon matPrefix>person</mat-icon>
-</mat-form-field>
-<mat-form-field class="w-100" appearance="outline">
-    <mat-label>Country</mat-label>
-      <mat-select matInput> 
-        <mat-option formControlName="country" *ngFor="let country of countrysList" value="country.id">
-          {{country}}
-        </mat-option>
-        <!-- <mat-option value="Albania">Albania</mat-option>
-        <mat-option value="Algeria">Algeria</mat-option>
-        <mat-option value="Armenia">Armenia</mat-option>
-        <mat-option value="Australia">Australia</mat-option>
-        <mat-option value="Bangladesh">Bangladesh</mat-option>
-        <mat-option value="Brazil">Brazil</mat-option>
-        <mat-option value="Canada">Canada</mat-option>
-        <mat-option value="China">China</mat-option>
-        <mat-option value="Colombia">Colombia</mat-option>
-        <mat-option value="Dominica">Dominica</mat-option>
-        <mat-option value="Ethiopia">Ethiopia</mat-option>
-        <mat-option value="France">Finland</mat-option>
-        <mat-option value="France">France</mat-option>
-        <mat-option value="Germany">Germany</mat-option>
-        <mat-option value="Hawaii">Hawaii*</mat-option>
-        <mat-option>Holy See</mat-option>
-        <mat-option value="India">India</mat-option>
-        <mat-option>Indonesia</mat-option>
-        <mat-option value="Ireland">Ireland</mat-option>
-        <mat-option>Italy</mat-option>
-        <mat-option>Japan</mat-option>
-        <mat-option>Kenya</mat-option>
-        <mat-option>Korea</mat-option>
-        <mat-option>Maldives</mat-option>
-        <mat-option>Mexico</mat-option>
-        <mat-option>Namibia</mat-option> -->
-      </mat-select>
-      <mat-hint [align]="'end'">Choose Country</mat-hint>
-      <mat-icon matPrefix>place</mat-icon>
-</mat-form-field>
-<mat-form-field class="w-100" appearance="outline">
-  <mat-label>City</mat-label>
-    <input  type="text" [matAutocomplete]="citesAutocomplete" formControlName="city" matInput placeholder="City" required="required">
-    <mat-hint [align]="'end'">up to 30 charector</mat-hint>
-    <mat-icon matPrefix>place</mat-icon>
-    <mat-autocomplete #citesAutocomplete="matAutocomplete">
-      <mat-option *ngFor="let citys of cityNames" [value]="citys.id">{{citys.cityName}}</mat-option>
-    </mat-autocomplete>
-</mat-form-field>
+<div class="flex">
+  <div class="box-1">
+    <form [formGroup]="formGroup">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Add Your Mail</mat-label>
+          <input  type="text" formControlName="email" matInput placeholder="Enter Email " required="required">
+          <mat-hint [align]="'end'">up to 30 charector</mat-hint>
+          <mat-icon matPrefix>mail</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Add Name</mat-label>
+          <input  type="text" formControlName="customerName" matInput placeholder="Enter Customer Name" required="required">
+          <mat-hint [align]="'end'">up to 30 charector</mat-hint>
+          <mat-icon matPrefix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Country</mat-label>
+          <mat-select matInput> 
+            <mat-option formControlName="country" *ngFor="let country of countrysList" value="country.id">
+              {{country}}
+            </mat-option>
+            <!-- <mat-option value="Albania">Albania</mat-option>
+            <mat-option value="Algeria">Algeria</mat-option>
+            <mat-option value="Armenia">Armenia</mat-option>
+            <mat-option value="Australia">Australia</mat-option>
+            <mat-option value="Bangladesh">Bangladesh</mat-option>
+            <mat-option value="Brazil">Brazil</mat-option>
+            <mat-option value="Canada">Canada</mat-option>
+            <mat-option value="China">China</mat-option>
+            <mat-option value="Colombia">Colombia</mat-option>
+            <mat-option value="Dominica">Dominica</mat-option>
+            <mat-option value="Ethiopia">Ethiopia</mat-option>
+            <mat-option value="France">Finland</mat-option>
+            <mat-option value="France">France</mat-option>
+            <mat-option value="Germany">Germany</mat-option>
+            <mat-option value="Hawaii">Hawaii*</mat-option>
+            <mat-option>Holy See</mat-option>
+            <mat-option value="India">India</mat-option>
+            <mat-option>Indonesia</mat-option>
+            <mat-option value="Ireland">Ireland</mat-option>
+            <mat-option>Italy</mat-option>
+            <mat-option>Japan</mat-option>
+            <mat-option>Kenya</mat-option>
+            <mat-option>Korea</mat-option>
+            <mat-option>Maldives</mat-option>
+            <mat-option>Mexico</mat-option>
+            <mat-option>Namibia</mat-option> -->
+          </mat-select>
+          <mat-hint [align]="'end'">Choose Country</mat-hint>
+          <mat-icon matPrefix>place</mat-icon>
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>City</mat-label>
+        <input  type="text" [matAutocomplete]="citesAutocomplete" formControlName="city" matInput placeholder="City" required="required">
+        <mat-hint [align]="'end'">Choose Citys</mat-hint>
+        <mat-icon matPrefix>place</mat-icon>
+        <mat-autocomplete #citesAutocomplete="matAutocomplete">
+          <mat-option *ngFor="let citys of cityNames" [value]="citys.id">{{citys.cityName}}</mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <div class="ml mt">
+      <mat-checkbox formControlName="receiveNewsLetters" color="primary ">Receive News Letters</mat-checkbox>
+    </div>
+    <div class="ml mt mb">
+      <mat-label>Hobbies:</mat-label>
+      <div formArrayName="hobbies">
+        <div>
+          <mat-checkbox formControlName="allHobbies">
+            All
+          </mat-checkbox>
+        </div>
+        <div class="grid">
+            <mat-checkbox color="primary" *ngFor="let hobbies of Hobbies">{{hobbies.hobbiesName}}</mat-checkbox>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label id="example-radio-group-label">Gender:</label>
+      <mat-radio-group class="mr" formControlName="gender">
+          <mat-radio-button class="example-radio-button" *ngFor="let gender of Gender" [value]="gender">{{gender}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </form>
+  </div>
+  <div class="box-2">
+    <form [formGroup]="formGroup">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Date Of Birth</mat-label>
+        <input type="text" matInput  [matDatepicker]="dobDatepicker" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="dobDatepicker">
+          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #dobDatepicker></mat-datepicker>
+        <mat-hint [align]="'end'">Enter Date Of Birth</mat-hint>
+    </mat-form-field>
+    
+    <mat-form-field class="w-100" color="primary" appearance="outline">
+      <mat-label>Period Of Study:</mat-label>
+      <mat-date-range-input [rangePicker]="dobRangepicker">
+      <input type="text" matStartDate matInput formControlName="studyPeriodStart">
+      <input type="text" matEndDate matInput formControlName="studyPeriodEnd">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="dobRangepicker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-date-range-picker #dobRangepicker></mat-date-range-picker>
+    </mat-form-field>
+    <div class="mb mt">
+      <mat-label>Expertise Level:</mat-label>
+      <mat-button-toggle-group>
+        <mat-button-toggle class="w-100" *ngFor="let levels of expertiseLevel" value="levels.id">{{levels.levels}}</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div class="mt mb">
+      <div>
+        <mat-label>Banks:</mat-label>
+      </div>
+      <mat-chip-listbox>
+        <mat-chip color="accent" selectable [ariaSelected]="All">All Countrys</mat-chip>
+        <mat-chip color="accent" selectable [ariaSelected]="Uk">Canada</mat-chip>
+        <mat-chip color="accent" selectable [ariaSelected]="USA">UAS</mat-chip>
+      </mat-chip-listbox>
+    </div>
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Favourite Fruits</mat-label>
+      <input type="text" matInput formControlName="fruits" placeholder="Type Fruit Name..." [matAutocomplete]="fruitsAutoComplite">
+      <mat-autocomplete #fruitsAutoComplite="matAutocomplete">
+        <mat-option *ngFor="let fruits of allFruits" [value]="fruits.name">{{fruits.name}}</mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  </div>
+</div>
+
+<div>
 <button mat-raised-button color="primary" class="mr">Save</button>
 <button mat-raised-button color="accent" class="mr">Cancel</button>
 <button mat-raised-button color="warn" class="mr">Delete</button>
-</form>
+</div>
+
 
