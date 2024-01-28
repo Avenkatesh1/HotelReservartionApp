@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BookingTableData } from '../Material/Modules/Booking';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class TabledataService {
 
   constructor(private http:HttpClient) { }
-  getTableData(){
-    return this.http.get('https://jsonplaceholder.typicode.com/comments')
+  getTableData():Observable<BookingTableData[]>{
+    return this.http.get<BookingTableData[]>('https://jsonplaceholder.typicode.com/users')
   }
 }

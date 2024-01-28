@@ -1,6 +1,6 @@
 export interface BookingTableData{
     id:string;
-    customerName:string;
-    location:string;
-    date:Date
+    name:string;
+    email:string;
+    body:Date
 }

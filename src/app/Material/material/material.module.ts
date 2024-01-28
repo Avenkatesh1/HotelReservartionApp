@@ -13,7 +13,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { MatChipsModule} from '@angular/material/chips'
-import { MatTableModule} from '@angular/material/table'
+import { MatTableModule} from '@angular/material/table';
+
 
 const MaterialImports: any[] | Type<any> | ModuleWithProviders<{}>=[
   MatButtonModule,
